@@ -1,15 +1,16 @@
 <!doctype html>
 <html lang="es">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="shortcut icon" href="images/favicon.ico">
 
-		<title>Palma Web IV</title>
-		<meta name="description" content="La banda del patio">
-        <meta name="keywords" 	 content="palabras clave, separadas, por comas">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/favicon.ico">
 
-		<!-- 
+    <title>Palma Web IV</title>
+    <meta name="description" content="La banda del patio">
+    <meta name="keywords" content="palabras clave, separadas, por comas">
+
+    <!-- 
         <meta property="fb:app_id"        content="" /> 
 		<meta property="og:url"           content="" />
 		<meta property="og:type"          content="website" />
@@ -17,135 +18,161 @@
 		<meta property="og:description"   content="" /> 
         -->
 
-        <link href="style/normalize.css" rel="stylesheet">
-        <link href="style/main.css" rel="stylesheet">
+    <link href="style/normalize.css" rel="stylesheet">
+    <link href="style/main.css" rel="stylesheet">
 
-        <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap" rel="stylesheet"> -->
-    </head>
-    
-    <body>
-        <header>
+</head>
+
+<body>
+    <header>
+        <div class="flex">
             <div class="header-element logo">
                 <svg viewbox="0 0 24 24">
-                    <path d="M18.36,2.64C20,2.64 21.36,4 21.36,5.64C21.36,7.29 20,8.64 18.36,8.64C16.71,8.64 15.36,7.29 15.36,5.64C15.36,5.34 15.41,5.06 15.5,4.8C14.43,4.29 13.25,4 12,4A8,8 0 0,0 4,12L4.04,12.84L2.05,13.05L2,12A10,10 0 0,1 12,2C13.69,2 15.28,2.42 16.67,3.16C17.16,2.83 17.74,2.64 18.36,2.64M18.36,4.64A1,1 0 0,0 17.36,5.64A1,1 0 0,0 18.36,6.64C18.92,6.64 19.36,6.19 19.36,5.64C19.36,5.08 18.92,4.64 18.36,4.64M5.64,15.36C7.29,15.36 8.64,16.71 8.64,18.36C8.64,18.66 8.59,18.94 8.5,19.2C9.57,19.71 10.75,20 12,20A8,8 0 0,0 20,12L19.96,11.16L21.95,10.95L22,12A10,10 0 0,1 12,22C10.31,22 8.72,21.58 7.33,20.84C6.84,21.17 6.26,21.36 5.64,21.36C4,21.36 2.64,20 2.64,18.36C2.64,16.71 4,15.36 5.64,15.36M5.64,17.36C5.08,17.36 4.64,17.81 4.64,18.36C4.64,18.92 5.08,19.36 5.64,19.36A1,1 0 0,0 6.64,18.36A1,1 0 0,0 5.64,17.36M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z" />
+                    <path
+                        d="M18.36,2.64C20,2.64 21.36,4 21.36,5.64C21.36,7.29 20,8.64 18.36,8.64C16.71,8.64 15.36,7.29 15.36,5.64C15.36,5.34 15.41,5.06 15.5,4.8C14.43,4.29 13.25,4 12,4A8,8 0 0,0 4,12L4.04,12.84L2.05,13.05L2,12A10,10 0 0,1 12,2C13.69,2 15.28,2.42 16.67,3.16C17.16,2.83 17.74,2.64 18.36,2.64M18.36,4.64A1,1 0 0,0 17.36,5.64A1,1 0 0,0 18.36,6.64C18.92,6.64 19.36,6.19 19.36,5.64C19.36,5.08 18.92,4.64 18.36,4.64M5.64,15.36C7.29,15.36 8.64,16.71 8.64,18.36C8.64,18.66 8.59,18.94 8.5,19.2C9.57,19.71 10.75,20 12,20A8,8 0 0,0 20,12L19.96,11.16L21.95,10.95L22,12A10,10 0 0,1 12,22C10.31,22 8.72,21.58 7.33,20.84C6.84,21.17 6.26,21.36 5.64,21.36C4,21.36 2.64,20 2.64,18.36C2.64,16.71 4,15.36 5.64,15.36M5.64,17.36C5.08,17.36 4.64,17.81 4.64,18.36C4.64,18.92 5.08,19.36 5.64,19.36A1,1 0 0,0 6.64,18.36A1,1 0 0,0 5.64,17.36M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z" />
                 </svg>
             </div>
-
+    
             <div class="header-element title">
                 <h1>Título</h1>
             </div>
-        </header>
+        </div>
+      
+        <div class="header-element menu">
+            <svg viewBox="0 0 24 24">
+                <path fill="currentColor" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+            </svg>
+        </div>
+    </header>
 
-        <main>
-            <div class="main-element subtitle">
-                <h2>Subtítulo</h2>
-            </div>
+    <main>
+        <div class="main-element subtitle">
+            <h2>Subtítulo</h2>
+        </div>
+        <div class="main-element crud">
 
-            <div class="main-element crud">
-                <div class="crud__table">
-                    <div class="crud__table-grid">
-                        <div class="crud__table-grid-element">
-                            <img src="images/1.jpg" alt="ardillas">
+            <table class="crud__table">
+                
+                <tr>
+                    <th class="crud__table-head">Id</th>
+                    <th class="crud__table-head">Nombre</th>
+                    <th class="crud__table-head">Email</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Andrew Dunn</td>
+                    <td>aenean.sed@aol.org</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Iliana Hawkins</td>
+                    <td>tempus@yahoo.com</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Meredith Wilkinson</td>
+                    <td>mauris@protonmail.couk</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Dane Goff</td>
+                    <td>hendrerit.id@outlook.edu</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Leigh Hill</td>
+                    <td>donec.fringilla@icloud.com</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Zachary Ramos</td>
+                    <td>dolor.elit.pellentesque@hotmail.ca</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Caryn Boyle</td>
+                    <td>bibendum.fermentum@aol.ca</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Quynn English</td>
+                    <td>enim.condimentum@google.couk</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Roary Rosales</td>
+                    <td>proin.ultrices@aol.couk</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Hayfa Puckett</td>
+                    <td>vel.mauris@aol.net</td>
+                </tr>
+            </table>
+
+
+            <div class="crud__form">
+                <form class="crud__admin-form" id="crud__user-form" action="/users/create" autocomplete="off">
+                    <div class="crud__form-element">
+                        <div class="crud__form-label">
+                            <label for="name">Nombre</label>
                         </div>
 
-                        <div class="crud__table-grid-element">
-                            <img src="images/2.jpg" alt="ardillas">
-                        </div>
-
-                        <div class="crud__table-grid-element">
-                            <img src="images/3.jpg" alt="ardillas">
-                        </div>
-
-                        <div class="crud__table-grid-element">
-                            <img src="images/4.jpg" alt="ardillas">
-                        </div>
-
-                        <div class="crud__table-grid-element">
-                            <img src="images/5.jpg" alt="ardillas">
+                        <div class="crud__form-input">
+                            <input type="text" name="name">
                         </div>
                     </div>
-    
-                    <div class="crud__table-flex">
-                        <div class="crud__table-flex-element">
-                            <img src="images/1.jpg" alt="ardillas">
+
+                    <div class="crud__form-element">
+                        <div class="crud__form-label">
+                            <label for="surname">Apellidos</label>
                         </div>
 
-                        <div class="crud__table-flex-element">
-                            <img src="images/2.jpg" alt="ardillas">
-                        </div>
-
-                        <div class="crud__table-flex-element">
-                            <img src="images/3.jpg" alt="ardillas">
-                        </div>
-
-                        <div class="crud__table-flex-element">
-                            <img src="images/4.jpg" alt="ardillas">
-                        </div>
-
-                        <div class="crud__table-flex-element">
-                            <img src="images/5.jpg" alt="ardillas">
+                        <div class="crud__form-input">
+                            <input type="text" name="surname">
                         </div>
                     </div>
-                </div>
-    
-                <div class="crud__form">
-                    <form class="crud__admin-form" id="crud__user-form" action="/users/create" autocomplete="off"> 
-                        <div class="crud__form-element">
-                            <div class="crud__form-label">
-                                <label for="name">Nombre</label>
-                            </div>
 
-                            <div class="crud__form-input">
-                                <input type="text" name="name">
-                            </div>
-                        </div>
-
-                        <div class="crud__form-element">
-                            <div class="crud__form-label">
-                                <label for="surname">Apellidos</label>
-                            </div>
-
-                            <div class="crud__form-input">
-                                <input type="text" name="surname">
-                            </div>
-                        </div>
-
-                        <div class="crud__form-element">
-                            <button class="crud__store-button">
-                                <svg viewBox="0 0 24 24">
-                                <path fill="currentColor" d="M17 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V7L17 3M19 19H5V5H16.17L19 7.83V19M12 12C10.34 12 9 13.34 9 15S10.34 18 12 18 15 16.66 15 15 13.66 12 12 12M6 6H15V10H6V6Z" />
-                                </svg>
+                    <div class="crud__form-element">
+                        <button class="crud__store-button">
+                            <svg viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="M17 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V7L17 3M19 19H5V5H16.17L19 7.83V19M12 12C10.34 12 9 13.34 9 15S10.34 18 12 18 15 16.66 15 15 13.66 12 12 12M6 6H15V10H6V6Z" />
+                            </svg>
                             Guardar
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div> 
-        </main>
-
-        <footer>
-            <div class="footer-element copyright">
-                <p>@2048</p>
+                        </button>
+                    </div>
+                </form>
             </div>
-            <div class="footer-element author">
-                <a href="https://thispersondoesnotexist.com/"><p>enlace a una web de verdad</p></a>
-            </div>
-        </footer>
-            
-        <script src="js/main.js"></script>
+        </div>
+    </main>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-        <script>
-            WebFont.load({
-                google: {
-                    families: ['Ubuntu:700,700i', 'Ubuntu+Condensed:400', 'Yuji Boku:400']
-                }
-            });
-        </script>
+    <footer>
+        <div class="footer-element copyright">
+            <p>@2048</p>
+        </div>
+        <div class="footer-element author">
+            <a href="https://thispersondoesnotexist.com/">
+                <p>enlace a una web de verdad</p>
+            </a>
+        </div>
+    </footer>
 
-        <!-- 
+    <script src="js/main.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+        WebFont.load({
+            google: {
+                families: ['Ubuntu:700,700i', 'Ubuntu+Condensed:400', 'Yuji Boku:400']
+            }
+        });
+    </script>
+
+    <!-- 
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -156,5 +183,6 @@
             ga('send', 'pageview');
         </script> 
         -->
-    </body>
+</body>
+
 </html>

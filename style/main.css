@@ -14,7 +14,7 @@ body{
 header{
     display: flex;
     height: 10vh;
-    justify-content: start;
+    justify-content: space-between;
 }
 
 main{
@@ -34,7 +34,9 @@ footer{
 .footer-element{
     margin-bottom: 1em;
 }
-
+.flex{
+display: flex;
+}
 /*====================
 ======Typography======
 ======================*/
@@ -80,11 +82,25 @@ a {
     text-decoration: none;
     transition: 300ms;
 }
-
+td, th {
+    padding: 0.2em;
+    border: 1px solid white;
+    color: white;
+}
+th{
+    height: 1em;
+}
+table{
+    margin: 1em 0;
+}
 a:focus, a:hover {
     outline: none;
     outline-offset: 0;
     text-decoration: none;
+}
+a:focus p, a:hover p{
+    color:hsl(180, 79%, 91%);
+    text-shadow: 1px 1px 4px hsl(0, 0%, 0%),1px 0px 1px hsl(221, 39%, 28%);
 }
 
 /*====================
@@ -122,6 +138,14 @@ img {
 
 .title h1{
     text-align: left;
+}
+
+/*====================
+========Menu======
+======================*/
+.menu{
+   width: 2em;
+   color:white;
 }
 
 /*====================
@@ -231,6 +255,8 @@ img {
 }
 
 .crud__store-button{
+    display: flex;
+    align-items: center;
 	background-image: linear-gradient(to right, #253786 0%, #02A8B0 50%, #253786 100%);
     background-size: 200% auto;
     border-radius: 1em;
@@ -245,9 +271,12 @@ img {
 	min-width: 20%;
 	padding: 1em 2em;
 	transition: 0.5s;
-	text-decoration: none;
+    text-decoration: none;
+    margin:auto;
 }
-
+.crud__store-button svg{
+width: 2em;
+}
 .crud__store-button:hover{
     background-size: 100% auto;
 }
