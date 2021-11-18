@@ -244,6 +244,7 @@ img {
 
 .crud__form-label{
     width: 100%;
+    margin-bottom: 0.25em;
 }
 
 .crud__form-label label{
