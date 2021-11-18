@@ -116,23 +116,148 @@
 
             <div class="crud__form">
                 <form class="crud__admin-form" id="crud__user-form" action="/users/create" autocomplete="off">
-                    <div class="crud__form-element">
-                        <div class="crud__form-label">
-                            <label for="name">Nombre</label>
+                    <div class="crud__form-element col-4">
+                        <div class="col">
+                            <div class="crud__form-label">
+                                <label for="crud-file">Archivo</label>
+                            </div>
+                            <div class="crud__form-input">
+                                <input type="file" id="selectedFile" name="crud-file" style="display: none;" />
+                                <input type="button" value="Browse..." onclick="document.getElementById('selectedFile').click();" />
+                            </div>
+
+                        </div>
+                        <div class="col">
+                            <div class="crud__form-label">
+                                <label for="crud-user-name">Usuario</label>
+                            </div>
+                            <div class="crud__form-input">
+                                <input type="text" user-name="crud-user-name">
+                            </div>
                         </div>
 
-                        <div class="crud__form-input">
-                            <input type="text" name="name">
+                        <div class="col">
+                            <div class="crud__form-label">
+                                <label for="crud-password">Contraseña</label>
+                            </div>
+                            <div class="crud__form-input">
+                                <input type="password" name="crud-password">
+                            </div>
+                        </div>
+                        
+                        <div class="col">
+                            <div class="crud__form-label">
+                                <label for="crud-date">Fecha</label>
+                            </div>
+                            <div class="crud__form-input">
+                                <input type="date" name="crud-date">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="crud__form-element col-3">
+                        <div class="col">
+                            <div class="crud__form-label">
+                                <label for="crud-pais">Pais</label>
+                            </div>
+                            <div class="crud__form-input">
+                                <select name="crud-pais" id="">
+                                    <option value="" disabled selected>Seleccione uno</option>
+                                    <option value="es">España</option>
+                                    <option value="ger">Alemaña</option>
+                                    <option value="uk">Uk</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="crud__form-label">
+                                <label for="crud-tel">Teléfono</label>
+                            </div>
+                            <div class="crud__form-input">
+                                <input type="tel" name="crud-tel"  pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="crud__form-label">
+                                <label for="crud-email">E-mail</label>
+                            </div>
+                            <div class="crud__form-input">
+                                <input type="email" name="crud-email" id="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="crud__form-element col-2">
+                        <div class="col">
+                            <div class="crud__form-label">
+                                <label for="crud-planeta">Planeta</label>
+                            </div>
+                            <div class="crud__form-input flex">
+                                <div class="crud__form-input-radio">
+                                    <input type="radio" id="crud-planeta-marte" value="marte" name="crud-planeta">
+                                    <label for="crud-planeta-marte">Marte</label>
+                                </div>
+                                <div class="crud__form-input-radio">
+                                    <input type="radio" id="crud-planeta-venus" value="venus" name="crud-planeta">
+                                    <label for="crud-planeta-venus">Venus</label>
+                                    
+                                </div>
+                                <div class="crud__form-input-radio">
+                                    <input type="radio" id="crud-planeta-tierra" value="marte" name="crud-planeta">
+                                    <label for="crud-planeta-tierra">Tierra</label>
+
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="col">
+                            <div class="crud__form-label">
+                                <label for="">Dias</label>
+                            </div>
+                            <div class="crud__form-input flex">
+                                <div class="crud__form-input-checkbox">
+                                    <input type="checkbox" id="crud-dias" value="lunes" name="crud-dias">
+                                    <label for="crud-dias-marte">Lu</label>
+                                </div>
+                                <div class="crud__form-input-checkbox">
+                                    <input type="checkbox" id="crud-dias" value="martes" name="crud-dias">
+                                    <label for="crud-dias-venus">Ma</label>
+                                    
+                                </div>
+                                <div class="crud__form-input-checkbox">
+                                    <input type="checkbox" id="crud-dias" value="miercoles" name="crud-dias">
+                                    <label for="crud-dias-tierra">Mi</label>
+
+                                </div>
+                                <div class="crud__form-input-checkbox">
+                                    <input type="checkbox" id="crud-dias" value="jueves" name="crud-dias">
+                                    <label for="crud-dias-tierra">Ju</label>
+
+                                </div>
+                                <div class="crud__form-input-checkbox">
+                                    <input type="checkbox" id="crud-dias" value="viernes" name="crud-dias">
+                                    <label for="crud-dias-tierra">Vi</label>
+
+                                </div>
+                                <div class="crud__form-input-checkbox">
+                                    <input type="checkbox" id="crud-dias" value="sabado" name="crud-dias">
+                                    <label for="crud-dias-tierra">Sa</label>
+
+                                </div>
+                                <div class="crud__form-input-checkbox">
+                                    <input type="checkbox" id="crud-dias" value="domingo" name="crud-dias">
+                                    <label for="crud-dias-tierra">Do</label>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     <div class="crud__form-element">
                         <div class="crud__form-label">
-                            <label for="surname">Apellidos</label>
+                            <label for="crud-text">Texto</label>
                         </div>
 
                         <div class="crud__form-input">
-                            <input type="text" name="surname">
+                            <textarea rows="5" name="crud-text"></textarea>
                         </div>
                     </div>
 
@@ -167,7 +292,7 @@
     <script>
         WebFont.load({
             google: {
-                families: ['Ubuntu:700,700i', 'Ubuntu+Condensed:400', 'Yuji Boku:400']
+                families: ['Ubuntu:400,700,700i', 'Ubuntu+Condensed:400', 'Yuji Boku:400']
             }
         });
     </script>
