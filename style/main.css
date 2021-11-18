@@ -37,7 +37,9 @@ footer{
 .flex{
 display: flex;
 }
-
+input[type=date]::-webkit-calendar-picker-indicator{
+    margin-left: -25px;
+}
 
 /*====================
 ======MyBoostrap======
