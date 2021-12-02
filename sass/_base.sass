@@ -1,0 +1,301 @@
+/*====================
+ *=======Structure======
+ *======================
+
+body
+  background-color: hsl(221, 39%, 58%)
+  display: flex
+  flex-direction: column
+  margin: 1vh auto
+  min-height: 98vh
+  width: 90vw
+
+header
+  display: flex
+  height: 10vh
+  justify-content: space-between
+
+main
+  margin: 1em 0
+  width: 100%
+
+footer
+  margin-top: auto
+  width: 100%
+
+.main-element
+  margin-bottom: 2em
+
+.footer-element
+  margin-bottom: 1em
+
+.flex
+  display: flex
+
+input[type=date]::-webkit-calendar-picker-indicator
+  margin-left: -25px
+
+/*====================
+ *======MyBoostrap======
+ *======================
+
+.col-4
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+  width: 100%
+  gap: 1em
+
+.col-3
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  width: 100%
+  gap: 1em
+
+.col-2
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  width: 100%
+  gap: 1em
+
+/*====================
+ *======Typography======
+ *======================
+
+h1, h2, h3, h4, h5, h6, a, p
+  color: hsl(0, 0%, 100%)
+
+h1, h2, h3, h4
+  font-family: 'Yuji Boku', serif
+
+h5, h6
+  font-family: "Ubuntu Condensed"
+
+a, td, p, button
+  font-family: "Ubuntu"
+
+h1
+  font-size: 2.5em
+  font-weight: 700
+  text-decoration: none
+
+h2
+  font-size: 2em
+  font-weight: 700
+  text-decoration: none
+
+h4
+  font-weight: 700
+  text-decoration: none
+
+a
+  -webkit-transition: 300ms
+  -moz-transition: 300ms
+  -o-transition: 300ms
+  font-weight: 700
+  text-decoration: none
+  transition: 300ms
+
+td, th
+  padding: 0.2em
+  border: 1px solid white
+  color: white
+
+td
+  word-break: break-all
+
+th
+  height: 1em
+
+table
+  margin: 1em 0
+
+a
+  &:focus, &:hover
+    outline: none
+    outline-offset: 0
+    text-decoration: none
+
+  &:focus p, &:hover p
+    color: hsl(180, 79%, 91%)
+    text-shadow: 1px 1px 4px hsl(0, 0%, 0%), 1px 0px 1px hsl(221, 39%, 28%)
+
+/*====================
+ *========Image=========
+ *======================
+
+img
+  max-width: 100%
+
+/*====================
+ *========Logo=========
+ *======================
+
+.logo
+  width: max-content
+
+  svg
+    height: 3em
+    width: 3em
+
+    path
+      fill: hsl(19, 100%, 50%)
+
+/*====================
+ *========Title=========
+ *======================
+
+.title
+  margin-left: 1em
+
+  h1
+    text-align: left
+
+/*====================
+ *========Menu======
+ *======================
+
+.menu
+  width: 2em
+  color: white
+
+/*====================
+ *========Subtitle======
+ *======================
+
+.subtitle
+  background-color: hsl(207, 85%, 69%)
+  padding: 0.2em 0
+  width: 100%
+
+  h2
+    text-align: center
+
+/*====================
+ *=========CRUD=========
+ *======================
+
+.crud
+  display: flex
+  justify-content: space-between
+  width: 100%
+
+.crud__table, .crud__form
+  min-width: 45%
+  max-width: 45%
+
+.crud__table-grid, .crud__table-flex
+  margin-bottom: 1em
+  width: 100%
+
+.crud__table-grid
+  display: grid
+  grid-template-columns: 25% 25% 25% 25%
+  grid-gap: 0.5em
+
+.crud__table-grid-element
+  width: 100%
+
+.crud__table-flex
+  display: flex
+  flex-wrap: wrap
+  gap: 0.5em
+
+.crud__table-flex-element
+  flex-basis: 25%
+
+.crud__form
+  width: 100%
+.footer-element
+  width: 100%
+
+  p
+    text-align: center
+
+@media (max-width: 479px)
+  header
+    height: 2vh
+
+  .main-element
+    margin: 1.5em 0
+
+  .footer-element
+    margin: 1em 0
+
+  h1
+    font-size: 2em
+
+  h2
+    font-size: 1.5em
+
+  .logo svg
+    height: 2em
+    width: 2em
+
+  .title
+    margin-left: 0.5em
+
+  .crud
+    display: block
+
+  .crud__table, .crud__form
+    min-width: 100%
+    max-width: 100%
+
+  .crud__table-grid
+    grid-gap: 0
+
+  .crud__table-flex
+    gap: 0
+
+
+@media (max-width: 1024px)
+  header
+    height: 2vh
+
+  .main-element
+    margin: 1.5em 0
+
+  .footer-element
+    margin: 1em 0
+
+  h1
+    font-size: 2em
+
+  h2
+    font-size: 1.5em
+
+  .logo svg
+    height: 2em
+    width: 2em
+
+  .title
+    margin-left: 0.5em
+
+  .crud
+    display: block
+
+  .crud__table, .crud__form
+    min-width: 100%
+    max-width: 100%
+
+  .crud__table-grid
+    grid-gap: 0
+
+  .crud__table-flex
+    gap: 0
+
+
+@media (min-width: 1920px)
+  h1
+    font-size: 3.5em
+
+  h2
+    font-size: 3em
+
+  .logo svg
+    height: 4em
+    width: 4em
+
+
+  .footer-element p
+    font-size: 1.5em

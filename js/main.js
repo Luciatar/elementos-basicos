@@ -1,3 +1,9 @@
+import {tabHandler} from "./tabHandler.js";
+tabHandler();
+
+
+
+
 const formEle= document.querySelector("#crud__user-form")
 const submitButt= document.querySelector(".crud__store-button")
 let client = new ClientJS();
