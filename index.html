@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="images/favicon.ico">
 
-    <title>Palma Web IV</title>
+    <title>Panel de control</title>
     <meta name="description" content="La banda del patio">
     <meta name="keywords" content="palabras clave, separadas, por comas">
 
@@ -20,7 +20,7 @@
 
     <link href="style/normalize.css" rel="stylesheet">
     <link href="style/main.css" rel="stylesheet">
-
+    <script defer src="js/clientjs.js"></script>
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap" rel="stylesheet"> -->
@@ -132,7 +132,7 @@
                                 <label for="crud-user-name">Usuario</label>
                             </div>
                             <div class="crud__form-input">
-                                <input type="text" user-name="crud-user-name">
+                                <input type="text" name="crud-user-name" required>
                             </div>
                         </div>
 
@@ -141,7 +141,7 @@
                                 <label for="crud-password">Contraseña</label>
                             </div>
                             <div class="crud__form-input">
-                                <input type="password" name="crud-password">
+                                <input type="password" name="crud-password" required>
                             </div>
                         </div>
                         
@@ -150,7 +150,7 @@
                                 <label for="crud-date">Fecha</label>
                             </div>
                             <div class="crud__form-input">
-                                <input type="date" name="crud-date">
+                                <input type="date" name="crud-date" required>
                             </div>
                         </div>
                     </div>
@@ -160,7 +160,7 @@
                                 <label for="crud-pais">Pais</label>
                             </div>
                             <div class="crud__form-input">
-                                <select name="crud-pais" id="">
+                                <select name="crud-pais" required>
                                     <option value="" disabled selected>Seleccione uno</option>
                                     <option value="es">España</option>
                                     <option value="ger">Alemaña</option>
@@ -173,7 +173,7 @@
                                 <label for="crud-tel">Teléfono</label>
                             </div>
                             <div class="crud__form-input">
-                                <input type="tel" name="crud-tel"  pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                                <input type="tel" name="crud-tel"  pattern="[0-9]{3}[0-9]{2}[0-9]{3}" required>
                             </div>
                         </div>
                         <div class="col">
@@ -181,7 +181,7 @@
                                 <label for="crud-email">E-mail</label>
                             </div>
                             <div class="crud__form-input">
-                                <input type="email" name="crud-email" id="">
+                                <input type="email" name="crud-email" id="" required>
                             </div>
                         </div>
                     </div>
@@ -192,7 +192,7 @@
                             </div>
                             <div class="crud__form-input flex">
                                 <div class="crud__form-input-radio">
-                                    <input type="radio" id="crud-planeta-marte" value="marte" name="crud-planeta">
+                                    <input type="radio" id="crud-planeta-marte" value="marte" name="crud-planeta" required>
                                     <label for="crud-planeta-marte">Marte</label>
                                 </div>
                                 <div class="crud__form-input-radio">
@@ -201,7 +201,7 @@
                                     
                                 </div>
                                 <div class="crud__form-input-radio">
-                                    <input type="radio" id="crud-planeta-tierra" value="marte" name="crud-planeta">
+                                    <input type="radio" id="crud-planeta-tierra" value="tierra" name="crud-planeta">
                                     <label for="crud-planeta-tierra">Tierra</label>
 
                                 </div>
@@ -214,36 +214,36 @@
                             </div>
                             <div class="crud__form-input flex">
                                 <div class="crud__form-input-checkbox">
-                                    <input type="checkbox" id="crud-dias" value="lunes" name="crud-dias">
+                                    <input type="checkbox" value="lunes" name="crud-dias">
                                     <label for="crud-dias-marte">Lu</label>
                                 </div>
                                 <div class="crud__form-input-checkbox">
-                                    <input type="checkbox" id="crud-dias" value="martes" name="crud-dias">
+                                    <input type="checkbox" value="martes" name="crud-dias">
                                     <label for="crud-dias-venus">Ma</label>
                                     
                                 </div>
                                 <div class="crud__form-input-checkbox">
-                                    <input type="checkbox" id="crud-dias" value="miercoles" name="crud-dias">
+                                    <input type="checkbox" value="miercoles" name="crud-dias">
                                     <label for="crud-dias-tierra">Mi</label>
 
                                 </div>
                                 <div class="crud__form-input-checkbox">
-                                    <input type="checkbox" id="crud-dias" value="jueves" name="crud-dias">
+                                    <input type="checkbox" value="jueves" name="crud-dias">
                                     <label for="crud-dias-tierra">Ju</label>
 
                                 </div>
                                 <div class="crud__form-input-checkbox">
-                                    <input type="checkbox" id="crud-dias" value="viernes" name="crud-dias">
+                                    <input type="checkbox" value="viernes" name="crud-dias">
                                     <label for="crud-dias-tierra">Vi</label>
 
                                 </div>
                                 <div class="crud__form-input-checkbox">
-                                    <input type="checkbox" id="crud-dias" value="sabado" name="crud-dias">
+                                    <input type="checkbox" value="sabado" name="crud-dias">
                                     <label for="crud-dias-tierra">Sa</label>
 
                                 </div>
                                 <div class="crud__form-input-checkbox">
-                                    <input type="checkbox" id="crud-dias" value="domingo" name="crud-dias">
+                                    <input type="checkbox" value="domingo" name="crud-dias">
                                     <label for="crud-dias-tierra">Do</label>
 
                                 </div>
@@ -286,7 +286,7 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script defer src="js/main.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
     <script>
