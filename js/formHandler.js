@@ -10,12 +10,12 @@ export const formHandler = () => {
     
     
     function submitForm() {
-        console.log(fingerPrint());
-        // const formData= new FormData(formEle)
-        // formData.append("fingerprint", fingerPrint())
-        // for (var pair of formData.entries()) {
-        //     console.log(pair[0]+ ', ' + pair[1]); 
-        // }
+        
+        const formData= new FormData(formEle)
+        formData.append("fingerprint", fingerPrint())
+        for (var pair of formData.entries()) {
+            console.log(pair[0]+ ', ' + pair[1]); 
+        }
     }
 
 }
