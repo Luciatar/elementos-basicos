@@ -20,41 +20,60 @@
 
     <link href="style/normalize.css" rel="stylesheet">
     <link href="sass/main.css" rel="stylesheet">
-    <script defer src="js/clientjs.js"></script>
+   
 </head>
 
 <body>
     <header>
         <div class="flex">
-            <div class="header-element logo">
-                <svg viewbox="0 0 24 24">
+            <div class="header-element logo" id="logo">
+                <svg viewbox="0 0 155 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
-                        d="M18.36,2.64C20,2.64 21.36,4 21.36,5.64C21.36,7.29 20,8.64 18.36,8.64C16.71,8.64 15.36,7.29 15.36,5.64C15.36,5.34 15.41,5.06 15.5,4.8C14.43,4.29 13.25,4 12,4A8,8 0 0,0 4,12L4.04,12.84L2.05,13.05L2,12A10,10 0 0,1 12,2C13.69,2 15.28,2.42 16.67,3.16C17.16,2.83 17.74,2.64 18.36,2.64M18.36,4.64A1,1 0 0,0 17.36,5.64A1,1 0 0,0 18.36,6.64C18.92,6.64 19.36,6.19 19.36,5.64C19.36,5.08 18.92,4.64 18.36,4.64M5.64,15.36C7.29,15.36 8.64,16.71 8.64,18.36C8.64,18.66 8.59,18.94 8.5,19.2C9.57,19.71 10.75,20 12,20A8,8 0 0,0 20,12L19.96,11.16L21.95,10.95L22,12A10,10 0 0,1 12,22C10.31,22 8.72,21.58 7.33,20.84C6.84,21.17 6.26,21.36 5.64,21.36C4,21.36 2.64,20 2.64,18.36C2.64,16.71 4,15.36 5.64,15.36M5.64,17.36C5.08,17.36 4.64,17.81 4.64,18.36C4.64,18.92 5.08,19.36 5.64,19.36A1,1 0 0,0 6.64,18.36A1,1 0 0,0 5.64,17.36M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z" />
-                </svg>
+                      d="M152.962 21.6383C152.962 23.1274 147.865 28.1383 146.466 28.1383H140.454C138.965 28.1383 133.954 23.0406 133.954 21.6422L133.954 16.618M146.462 10.1726C147.951 10.1726 152.962 15.2703 152.962 16.6687M133.954 16.6687C133.954 15.1796 139.052 10.1687 140.45 10.1687L146.462 10.1687M152.962 16.6173V21.6415"
+                      stroke="black" stroke-width="3" />
+                    <path
+                      d="M127.239 28.1351C125.751 28.1351 120.659 23.0411 120.659 21.7022L120.659 1.58093M125.527 10.035H116.074M130.269 28.1301L127.211 28.1301"
+                      stroke="black" stroke-width="3" />
+                    <path d="M112.49 9.47583L112.49 29.6476" stroke="black" stroke-width="3" />
+                    <path d="M111.069 2.6571L112.49 4.07793L113.911 5.49875" stroke="black" stroke-width="4" />
+                    <path
+                      d="M99.7165 28.1219C101.205 28.1219 106.213 23.0267 106.213 21.6289M87.2141 21.6289C87.2141 23.1173 92.3093 28.1258 93.7071 28.1258L99.7164 28.1258M106.213 21.6803L106.213 1.51904M87.2141 21.6796L87.2141 16.6578C87.2141 15.2601 92.2226 10.1649 93.711 10.1649H100.705"
+                      stroke="black" stroke-width="3" />
+                    <path
+                      d="M81.8436 11.1544C80.3552 11.1544 75.2644 16.4723 75.2644 17.8701L75.2644 29.6295M84.8721 11.1595L81.8157 11.1595"
+                      stroke="black" stroke-width="3" />
+                    <path
+                      d="M61.2643 10.2079C62.7534 10.2079 67.7643 15.3055 67.7643 16.704M48.756 16.704C48.756 15.2149 53.8536 10.204 55.2521 10.204L61.2643 10.204M67.7643 16.6526L67.7643 29.6295M48.756 16.6533L48.756 21.6775C48.756 23.0759 53.7669 28.1736 55.256 28.1736H62.2532"
+                      stroke="black" stroke-width="3" />
+                    <path
+                      d="M41.9001 28.1467C40.4114 28.1467 35.3194 23.0527 35.3194 21.7138L35.3194 1.59253M40.1882 10.0466H30.7347M44.9294 28.1417L41.8722 28.1417"
+                      stroke="black" stroke-width="3" />
+                    <path
+                      d="M22.2643 10.1421C23.7534 10.1421 28.7643 15.2397 28.7643 16.6382M9.75598 16.6382C9.75598 15.1491 14.8536 10.1382 16.2521 10.1382L22.2643 10.1382M28.7643 16.5868V29.6019M9.75598 16.5875L9.75598 21.6117C9.75598 23.0101 14.7669 28.1078 16.256 28.1078H23.2532"
+                      stroke="black" stroke-width="3" />
+                    <path d="M2.07373 0.974731L2.07373 29.6019" stroke="black" stroke-width="3" />
+                  </svg>
             </div>
 
-            <div class="header-element title">
-                <h1>Título</h1>
-            </div>
         </div>
 
         <div class="header-element menu">
             <svg viewBox="0 0 24 24">
-                <path fill="currentColor" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+                <path  d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
             </svg>
         </div>
     </header>
 
     <main>
         <div class="main-element subtitle">
-            <h2>Subtítulo</h2>
+            <h2>Panel de Control</h2>
         </div>
         <div class="main-element crud">
 
             <table class="crud__table">
 
                 <tr>
-                    <th class="crud__table-head">Id</th>
+                    <th class="crud__table-head table-num">Id</th>
                     <th class="crud__table-head">Nombre</th>
                     <th class="crud__table-head">Email</th>
                 </tr>
@@ -149,13 +168,13 @@
                                 </div>
                             </div>
                             <div class="tab-group__content-element d-none" id="three">
-                                Tabs , consectetur adipisicing elit. Pariatur modi quod quo iure recusandae eligendi
-                                q.t, consectetur adipisicing elit. Pariatur modi quod quo iureq
+                               <textarea name="" id="editor1" cols="30" rows="10"></textarea>
                             </div>
                         </div>
 
                     </div>
                 </form>
+                <button type="submit" class="crud__store-button">Submit</button>
             </div>
         </div>
     </main>
@@ -170,7 +189,9 @@
             </a>
         </div>
     </footer>
-
+  
+    <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
+    <script src="node_modules/clientjs/dist/client.min.js"></script>
     <script type="module" src="js/main.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>

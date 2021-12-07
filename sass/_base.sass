@@ -3,28 +3,27 @@
  *======================
 
 body
-  background-color: hsl(221, 39%, 58%)
+  background-color: white
   display: flex
   flex-direction: column
-  margin: 1vh auto
   min-height: 98vh
-  width: 90vw
+  font-family: 'Open Sans', sans-serif
 
 header
   display: flex
-  height: 10vh
+  height: 4vh
   justify-content: space-between
+  align-items: center;
+  padding: 1em 2vw
+  
 
 main
-  margin: 1em 0
   width: 100%
 
 footer
   margin-top: auto
   width: 100%
 
-.main-element
-  margin-bottom: 2em
 
 .footer-element
   margin-bottom: 1em
@@ -35,6 +34,8 @@ footer
 input[type=date]::-webkit-calendar-picker-indicator
   margin-left: -25px
 
+
+  
 /*====================
  *======MyBoostrap======
  *======================
@@ -65,7 +66,7 @@ h1, h2, h3, h4, h5, h6, a, p
   color: hsl(0, 0%, 100%)
 
 h1, h2, h3, h4
-  font-family: 'Yuji Boku', serif
+  
 
 h5, h6
   font-family: "Ubuntu Condensed"
@@ -95,19 +96,6 @@ a
   text-decoration: none
   transition: 300ms
 
-td, th
-  padding: 0.2em
-  border: 1px solid white
-  color: white
-
-td
-  word-break: break-all
-
-th
-  height: 1em
-
-table
-  margin: 1em 0
 
 a
   &:focus, &:hover
@@ -126,29 +114,9 @@ a
 img
   max-width: 100%
 
-/*====================
- *========Logo=========
- *======================
 
-.logo
-  width: max-content
 
-  svg
-    height: 3em
-    width: 3em
 
-    path
-      fill: hsl(19, 100%, 50%)
-
-/*====================
- *========Title=========
- *======================
-
-.title
-  margin-left: 1em
-
-  h1
-    text-align: left
 
 /*====================
  *========Menu======
@@ -156,19 +124,22 @@ img
 
 .menu
   width: 2em
-  color: white
+  svg
+    fill: $primary-color
+
 
 /*====================
  *========Subtitle======
  *======================
 
 .subtitle
-  background-color: hsl(207, 85%, 69%)
-  padding: 0.2em 0
-  width: 100%
+  background-color: $primary-color
+  padding: 1vw
+  
 
   h2
     text-align: center
+    color: white
 
 /*====================
  *=========CRUD=========
@@ -177,46 +148,33 @@ img
 .crud
   display: flex
   justify-content: space-between
-  width: 100%
-
-.crud__table, .crud__form
-  min-width: 45%
-  max-width: 45%
-
-.crud__table-grid, .crud__table-flex
-  margin-bottom: 1em
-  width: 100%
-
-.crud__table-grid
-  display: grid
-  grid-template-columns: 25% 25% 25% 25%
-  grid-gap: 0.5em
-
-.crud__table-grid-element
-  width: 100%
-
-.crud__table-flex
-  display: flex
-  flex-wrap: wrap
-  gap: 0.5em
-
-.crud__table-flex-element
-  flex-basis: 25%
+  width: 96vw
+  margin: auto
+ 
+  
 
 .crud__form
   width: 100%
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+
 .footer-element
   width: 100%
 
   p
     text-align: center
+  
+.crud__table, .crud__form
+    width: 45% 
+    width: 45% 
+  
+
+
 
 @media (max-width: 479px)
   header
     height: 2vh
-
-  .main-element
-    margin: 1.5em 0
 
   .footer-element
     margin: 1em 0
@@ -227,12 +185,10 @@ img
   h2
     font-size: 1.5em
 
-  .logo svg
-    height: 2em
-    width: 2em
 
-  .title
-    margin-left: 0.5em
+  
+
+ 
 
   .crud
     display: block
@@ -252,9 +208,6 @@ img
   header
     height: 2vh
 
-  .main-element
-    margin: 1.5em 0
-
   .footer-element
     margin: 1em 0
 
@@ -264,19 +217,13 @@ img
   h2
     font-size: 1.5em
 
-  .logo svg
-    height: 2em
-    width: 2em
-
-  .title
-    margin-left: 0.5em
-
   .crud
     display: block
 
   .crud__table, .crud__form
     min-width: 100%
     max-width: 100%
+    
 
   .crud__table-grid
     grid-gap: 0
@@ -291,10 +238,6 @@ img
 
   h2
     font-size: 3em
-
-  .logo svg
-    height: 4em
-    width: 4em
 
 
   .footer-element p

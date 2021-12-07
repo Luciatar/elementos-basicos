@@ -1,0 +1,20 @@
+#logo svg
+  width: 8vw !important
+  min-width: 7rem
+  filter: drop-shadow(1px 1px 0.5px rgba(0, 0, 0, 0.51))
+
+
+#logo svg path
+  stroke-dasharray: 50
+  stroke-dashoffset: 50
+
+
+#logo svg:hover path
+  stroke-dashoffset: 0
+
+
+.drawn
+  stroke-dashoffset: 0 !important
+  -webkit-transition: stroke-dashoffset 0.5s, stroke-width 1s
+  -moz-transition: stroke-dashoffset 0.5s, stroke-width 1s
+  transition: stroke-dashoffset 0.5s, stroke-width 1s
