@@ -3,10 +3,10 @@ export const logoHandler = () =>{
 
 
     const LOGO= document.querySelector('#logo svg');
-    console.log(LOGO)
+   
     const LOGOPATHS=Array.from(LOGO.querySelectorAll("path") ).reverse();
 const ROOT = document.documentElement;
-    console.log(LOGOPATHS)
+
     drawLogo();
 
 

@@ -11,11 +11,11 @@ export const tabHandler = () => {
             });
             tab.classList.add('active');
             tabsContent.forEach(elem => {
-                fadeOut(elem, 200);
+                fadeOut(elem);
             })
-            setTimeout(() => {
-                fadeIn(document.getElementById(content), 200);
-            }, 202);
+            
+            fadeIn(document.getElementById(content));
+            
         });
     });
 }

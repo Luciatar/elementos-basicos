@@ -1,21 +1,21 @@
-import {fingerPrint} from "./fingerPrint.js";
+import { clientId } from "./clientId.js";
+import { ckEditor, ckEditorsFormDataAppendAll } from "./ckEditor.js";
 export const formHandler = () => {
-    const formEle= document.querySelector("#crud__user-form")
-    const submitButt= document.querySelector(".crud__store-button")
+    const formEle = document.querySelector("#crud__user-form")
+    const submitButt = document.querySelector(".crud__store-button")
 
-    submitButt.addEventListener("click", function(e) {
+    submitButt.addEventListener("click", function (e) {
         submitForm()
-        e.preventDefault()
+        // e.preventDefault()
     })
-    
-    
+
+
     function submitForm() {
-        
-        const formData= new FormData(formEle)
-        formData.append("fingerprint", fingerPrint())
+        const formData = new FormData(formEle)
+        formData.append("fingerprint", clientId())
+        ckEditorsFormDataAppendAll(formData)
         for (var pair of formData.entries()) {
-            console.log(pair[0]+ ', ' + pair[1]); 
+            console.log(pair[0] + ', ' + pair[1]);
         }
     }
-
 }

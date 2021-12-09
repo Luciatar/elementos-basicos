@@ -1,7 +1,7 @@
 const root = document.documentElement;
-
-export const fadeOut = (element, speed) => {
-    root.style.setProperty('--fade-speed', speed + "ms");
+const speed= 200
+export const fadeOut = (element) => {
+    
     element.classList.add('fade');
     element.classList.add('opacity-0');
     setTimeout(() => {
@@ -9,11 +9,14 @@ export const fadeOut = (element, speed) => {
     }, speed);
 }
 
-export const fadeIn = (element, speed) => {
-    element.classList.remove('d-none');
-    root.style.setProperty('--fade-speed', speed + "ms");
-    element.classList.add('fade');
+export const fadeIn = (element) => {
     setTimeout(() => {
-        element.classList.remove('opacity-0');
-    }, 0);
+        element.classList.remove('d-none');
+    
+        element.classList.add('fade');
+        setTimeout(() => {
+            element.classList.remove('opacity-0');
+        }, 0);
+    }, speed+1);
+   
 }
