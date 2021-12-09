@@ -174,28 +174,44 @@
                                     </div>
                                     <div class="input-group__element select-nested-input__option d-none" data-select-name="linktype" data-option="external">
                                         <label for="">External Link</label>
-                                        <input type="text" name="internal-link" id="">
+                                        <input disabled type="text" name="external-link" id="">
                                     </div>
                                     <div class="input-group__element select-nested-input__option d-none" data-select-name="linktype" data-option="internal">
                                         <label for="color">Internal link Color</label>
-                                        <select name="color" id="">
+                                        <select disabled name="color" id="">
                                             <option disabled selected >Select one</option>
                                             <option value="red">Red</option>
                                             <option value="black">Black</option>
                                         </select>
                                     </div>
                                   
-
+                                    <div class="input-group__element">
+                                        <label for="region">Region</label>
+                                        <select class="select-nested-input" name="region" id="">
+                                            <option disabled selected >Select one</option>
+                                            <option value="catalunya">Catalunya</option>
+                                            <option value="baleares">Baleares</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group__element select-nested-input__option d-none" data-select-name="region" data-option="baleares">
+                                        <label for="">Bebida</label>
+                                        <select disabled name="bebida" id="">
+                                            <option disabled selected >Select one</option>
+                                            <option value="smothie butifarra">smothie butifarra</option>
+                                            <option value="cacaolat mallorqui">cacaolat mallorqui</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group__element select-nested-input__option d-none" data-select-name="region" data-option="catalunya">
+                                        <label for="bebida">Bebida</label>
+                                        <select disabled name="bebida" id="">
+                                            <option disabled selected >Select one</option>
+                                            <option value="cacaolat">cacaolat</option>
+                                            <option value="vermut">vermut</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="tab-group__content-element d-none" id="three">
-                                <div class="input-group__element">
-                                    <textarea name="ckeditorTab1" class="ckeditor" cols="30" rows="10"></textarea>
-                                </div>
-                                <div class="input-group__element">
-                                    <textarea name="ckeditorTab2" class="ckeditor" cols="30" rows="10"></textarea>
-                                </div>
-                            </div>
+                           
                         </div>
 
                     </div>
