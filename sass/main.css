@@ -375,6 +375,10 @@ header {
   padding: 1em 2vw;
 }
 
+header a {
+  color: black;
+}
+
 main {
   width: 100%;
 }
@@ -624,6 +628,10 @@ img {
   }
 }
 
+.invalid-input {
+  background: #f48686;
+}
+
 .input-group {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -656,6 +664,14 @@ img {
 
 .input-group .input-group__element select {
   padding: 0.4em;
+}
+
+#input-group__display {
+  background: red;
+  text-align: center;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
 }
 
 .crud__store-button {
@@ -731,5 +747,146 @@ table > tbody > tr:last-child {
 
 .ck-editor__editable p {
   color: black;
+}
+
+body {
+  background: rgba(175, 181, 187, 0.18);
+}
+
+.login {
+  margin: auto;
+  width: 400px;
+  font-family: "Roboto", sans-serif;
+  color: rgba(26, 25, 25, 0.72);
+  font-weight: 500;
+}
+
+.login__prompt {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 3rem 0 1rem 0;
+}
+
+.login__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: white;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid rgba(189, 178, 178, 0.43);
+  -webkit-box-shadow: 1px 1px 3px rgba(148, 150, 153, 0.12);
+          box-shadow: 1px 1px 3px rgba(148, 150, 153, 0.12);
+}
+
+.login form, .login__box-alt, .service-conditions-new {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0rem 1.5rem;
+}
+
+.login form {
+  margin: 1.5rem 0;
+  width: 100%;
+}
+
+.login__box label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.login input {
+  width: 100%;
+  height: 2.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: white;
+  border: 1px solid rgba(189, 178, 178, 0.43);
+  -webkit-box-shadow: 1px 1px 3px rgba(148, 150, 153, 0.12);
+          box-shadow: 1px 1px 3px rgba(148, 150, 153, 0.12);
+  border-radius: 2px;
+}
+
+.login__box [type="submit"] {
+  background-color: #c9366e;
+  color: white;
+  border: none;
+  -webkit-box-shadow: 1px 1px 3px rgba(148, 150, 153, 0.12);
+          box-shadow: 1px 1px 3px rgba(148, 150, 153, 0.12);
+}
+
+.service-conditions-new, .service-conditions {
+  font-size: 0.75rem;
+  text-align: center;
+  font-weight: 400;
+  margin: 1rem 0 1rem 0;
+  color: rgba(26, 25, 25, 0.863);
+}
+
+.login__box-divider {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+  color: rgba(83, 80, 80, 0.82);
+  font-weight: 400;
+  font-family: sans-serif;
+  font-size: 0.85rem;
+}
+
+.login__box-hr {
+  width: 45%;
+  height: 2px;
+  background: #bdb2b2;
+}
+
+.login__box-alt {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+}
+
+.login__box-alt button {
+  background: white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 2.5rem;
+  margin: 0.5rem 0;
+  border: 1px solid #bdb2b2;
+  -webkit-box-shadow: 1px 1px 3px #949699;
+          box-shadow: 1px 1px 3px #949699;
+  border-radius: 2px;
+  color: #1a1919;
+}
+
+button svg, button img {
+  height: 16px;
+}
+
+.login__create-account, .login__email-acces, .login__password-recovery {
+  text-align: center;
+  margin: 1rem;
+  font-weight: 500;
+  color: rgba(83, 80, 80, 0.82);
+  font-size: 0.9rem;
+}
+
+.login hr {
+  border: 1px solid rgba(189, 178, 178, 0.43);
 }
 /*# sourceMappingURL=main.css.map */

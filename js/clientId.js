@@ -1,4 +1,4 @@
-export const clientId = () =>{
+export const getFingerprint = () =>{
 
     let client = new ClientJS();
     let fingerprint = client.getFingerprint(); // Get Client's Fingerprint

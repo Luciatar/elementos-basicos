@@ -10,5 +10,6 @@ window.onload = function () {
     formHandler();
     ckeditorIni();
     selectNestedInputHandlder();
+   
 };
 

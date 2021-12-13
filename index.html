@@ -57,6 +57,9 @@
 
         </div>
 
+        <div class="header-element login">
+            <a href="login.html">LOGIN</a>
+        </div>
         <div class="header-element menu">
             <svg viewBox="0 0 24 24">
                 <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
@@ -131,12 +134,12 @@
 
 
             <div class="crud__form">
-                <form class="crud__admin-form" id="crud__user-form" action="/users/create" autocomplete="off">
+                <form class="crud__admin-form" id="crud__user-form" action="http://141.94.27.118:8080/api/register" autocomplete="off">
 
                     <div class="tab-group">
 
                         <ul class="tab-group__titles">
-                            <li><a class="active" href="#/one">Light &</a></li>
+                            <li><a class="active" href="#/one">Create new user</a></li>
                             <li><a href="#/two">Sexy</a></li>
                             <li><a href="#/three">Tabs</a></li>
                         </ul>
@@ -144,20 +147,36 @@
                         <div id="tab-group__content">
                             <div class="tab-group__content-element" id="one">
                                 <div class="input-group">
-                                    <div class="input-group__element">
-                                        <label for="title">Title</label>
-                                        <input type="text" name="title">
+                                    <div class="" id="input-group__display">
+                                       
                                     </div>
                                     <div class="input-group__element">
-                                        <label for="author">Author</label>
-                                        <input type="text" name="author">
+                                        <label for="name">Name</label>
+                                        <input class="crud__user-form-input" type="text" name="name">
                                     </div>
                                     <div class="input-group__element">
-                                        <label for="editor">Editor</label>
-                                        <input type="text" name="editor">
+                                        <label for="email">Email</label>
+                                        <input class="crud__user-form-input" type="text" name="email">
+                                    </div>
+                                    <div class="input-group__element">
+                                        <label for="password">Password</label>
+                                        <input class="crud__user-form-input" type="password" name="password">
+                                    </div>
+                                    <div class="input-group__element">
+                                        <label for="c_password">Confirm password</label>
+                                        <input class="crud__user-form-input" type="password" name="c_password">
+                                    </div>
+                                    <div class="input-group__element">
+                                        <label for="role">Role</label>
+                                        <select class="crud__user-form-input" name="role" >
+                                            <option disabled selected value="">Choose one</option>
+                                            <option value="admin">Admin</option>
+                                            <option value="user">User</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
+                        </form>
                             <div class="tab-group__content-element d-none" id="two">
                                 <div class="input-group">
                                     <div class="input-group__element">
@@ -166,7 +185,7 @@
                                     </div>
                                     <div class="input-group__element">
                                         <label for="linktype">Type of link</label>
-                                        <select class="select-nested-input" name="linktype" id="">
+                                        <select class="select-nested-input" name="linktype">
                                             <option disabled selected >Select one</option>
                                             <option value="external">External</option>
                                             <option value="internal">Internal</option>
@@ -174,11 +193,11 @@
                                     </div>
                                     <div class="input-group__element select-nested-input__option d-none" data-select-name="linktype" data-option="external">
                                         <label for="">External Link</label>
-                                        <input disabled type="text" name="external-link" id="">
+                                        <input disabled type="text" name="external-link">
                                     </div>
                                     <div class="input-group__element select-nested-input__option d-none" data-select-name="linktype" data-option="internal">
                                         <label for="color">Internal link Color</label>
-                                        <select disabled name="color" id="">
+                                        <select disabled name="color">
                                             <option disabled selected >Select one</option>
                                             <option value="red">Red</option>
                                             <option value="black">Black</option>
@@ -187,7 +206,7 @@
                                   
                                     <div class="input-group__element">
                                         <label for="region">Region</label>
-                                        <select class="select-nested-input" name="region" id="">
+                                        <select class="select-nested-input" name="region">
                                             <option disabled selected >Select one</option>
                                             <option value="catalunya">Catalunya</option>
                                             <option value="baleares">Baleares</option>
@@ -195,7 +214,7 @@
                                     </div>
                                     <div class="input-group__element select-nested-input__option d-none" data-select-name="region" data-option="baleares">
                                         <label for="">Bebida</label>
-                                        <select disabled name="bebida" id="">
+                                        <select disabled name="bebida">
                                             <option disabled selected >Select one</option>
                                             <option value="smothie butifarra">smothie butifarra</option>
                                             <option value="cacaolat mallorqui">cacaolat mallorqui</option>
@@ -203,7 +222,7 @@
                                     </div>
                                     <div class="input-group__element select-nested-input__option d-none" data-select-name="region" data-option="catalunya">
                                         <label for="bebida">Bebida</label>
-                                        <select disabled name="bebida" id="">
+                                        <select disabled name="bebida">
                                             <option disabled selected >Select one</option>
                                             <option value="cacaolat">cacaolat</option>
                                             <option value="vermut">vermut</option>
@@ -218,8 +237,8 @@
                         </div>
 
                     </div>
-                </form>
-                <button type="submit" class="crud__store-button">Submit</button>
+                
+                <button  id="submit" class="crud__store-button">Submit</button>
             </div>
         </div>
     </main>

@@ -1,35 +1,28 @@
-import { getFingerprint } from "./clientId.js";
-import { ckEditorsFormDataAppendAll } from "./ckEditor.js";
+import { getFingerprint } from './clientId.js';
 
-export const formHandler = () => {
+export let renderForm = () => {
 
-    const form = document.getElementById("crud__user-form");
-    const submitButton = document.getElementById("submit");
-    const formElements = [...document.getElementsByClassName("crud__user-form-input")]
-    formElements.forEach(element => {
-        if (element.tagName == "INPUT" || element.tagName == "SELECT") {
-            element.addEventListener("click", function () {
-                element.classList.remove("invalid-input")
-            })
-        }
-    });
-    submitButton.addEventListener("click", function (e) {
+    let loginForm = document.getElementById("login-form");
+    let loginButton = document.getElementById("login-button");
 
-        e.preventDefault()
+    if (loginButton) {
+        console.log("hiit");
+        loginButton.addEventListener("click", (event) => {
+            // const formData = new FormData(loginForm);
+            // for (var pair of formData.entries()) {
+            //     console.log(pair[0] + ', ' + pair[1]);
+            // }
+            event.preventDefault();
 
-        if (submitButton) {
-
-
-            let url = form.action;
-            let data = new FormData(form);
+            let url = loginForm.action; //cambiado form.action por loginForm.action
+            let data = new FormData(loginForm);
             data.append("fingerprint", getFingerprint());
 
             let sendPostRequest = async () => {
 
                 let request = await fetch(url, {
-                    headers: {
-                        'Authorization': 'Bearer ' + localStorage.getItem('token')
-                    },
+
+
                     method: 'POST',
                     body: data
                 })
@@ -41,33 +34,26 @@ export const formHandler = () => {
                     })
                     .then(json => {
                         localStorage.setItem('token', json.data);
-
+                        
                     })
                     .catch(error => {
 
                         if (error.status == '400') {
 
                             error.json().then(jsonError => {
-                               
+
                                 let errors = jsonError.data;
 
                                 Object.keys(errors).forEach((key) => {
-                                    
-                                    document.querySelector(`[name=${key}]`).classList.add("invalid-input")
-                                    document.querySelector(`[name=${key}]`).placeholder = errors[key][0];
+                                    let errorMessage = document.createElement('li');
+                                    errorMessage.textContent = errors[key];
+                                    console.log(errorMessage)
                                 })
-
-
                             })
                         }
 
                         if (error.status == '500') {
-
-                            error.forEach(element => {
-                                console.log(element);
-                            });
-
-
+                            console.log(error);
                         }
                     });
 
@@ -100,6 +86,9 @@ export const formHandler = () => {
             };
 
             sendPostRequest();
-        }
-    })
-}
+
+        });
+    }
+};
+
+renderForm()
