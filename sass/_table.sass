@@ -6,12 +6,37 @@ td, th
 
 td
   word-break: break-all
+  width: 30%
    
 th
   height: 1em
   color: $secondary-color
 .table-num
   width: 8%
+
+.button-edit
+  width: 10%
+  cursor: pointer
+  
+.button-edit-color:after
+  background-color: hsla(0deg, 0%, 100%, 0.50)
+
+
+.button-edit:after
+  width: 20px
+  height: 20px
+  display: inline-block
+  content: ''
+  -webkit-mask: url(/svg/edit.svg) no-repeat 50% 50%
+  mask: url(/svg/edit.svg) no-repeat 50% 50%
+  -webkit-mask-size: cover
+  mask-size: cover
+  
+
+.button-edit.button-edit-color:hover:after
+  background-color: white
+  position: relative
+  top: -1px
 
 table
   table-layout: fixed

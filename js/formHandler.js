@@ -21,6 +21,7 @@ export const formHandler = () => {
 
 
             let url = form.action;
+
             let data = new FormData(form);
             data.append("fingerprint", getFingerprint());
 

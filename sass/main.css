@@ -711,6 +711,7 @@ td, th {
 
 td {
   word-break: break-all;
+  width: 30%;
 }
 
 th {
@@ -720,6 +721,32 @@ th {
 
 .table-num {
   width: 8%;
+}
+
+.button-edit {
+  width: 10%;
+  cursor: pointer;
+}
+
+.button-edit-color:after {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.button-edit:after {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  content: '';
+  -webkit-mask: url(/svg/edit.svg) no-repeat 50% 50%;
+  mask: url(/svg/edit.svg) no-repeat 50% 50%;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+}
+
+.button-edit.button-edit-color:hover:after {
+  background-color: white;
+  position: relative;
+  top: -1px;
 }
 
 table {
