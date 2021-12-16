@@ -1,4 +1,5 @@
 import { getFingerprint } from './clientId.js';
+import { modalBox } from './modalBox.js';
 
 export let renderForm = () => {
 
@@ -34,6 +35,11 @@ export let renderForm = () => {
                     })
                     .then(json => {
                         localStorage.setItem('token', json.data);
+                        let text= data.get("email") + " logged in";
+                        console.log(text)
+                        console.log(json.data)
+                        console.log("loginForm"+loginForm)
+                        document.dispatchEvent(new CustomEvent('modalbox', { bubbles: true, detail: {msg: text, displaytime: 5000, position: "bottom-right", color: "success"} } ))
                         
                     })
                     .catch(error => {
@@ -43,12 +49,12 @@ export let renderForm = () => {
                             error.json().then(jsonError => {
 
                                 let errors = jsonError.data;
-
-                                Object.keys(errors).forEach((key) => {
-                                    let errorMessage = document.createElement('li');
-                                    errorMessage.textContent = errors[key];
-                                    console.log(errorMessage)
-                                })
+                                console.log(errors)
+                                // Object.keys(errors).forEach((key) => {
+                                //     let errorMessage = document.createElement('li');
+                                //     errorMessage.textContent = errors[key];
+                                //     console.log(errorMessage)
+                                // })
                             })
                         }
 

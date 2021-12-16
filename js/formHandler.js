@@ -1,6 +1,7 @@
 import { getFingerprint } from "./clientId.js";
 import { ckEditorsFormDataAppendAll } from "./ckEditor.js";
 
+
 export const formHandler = () => {
 
     const form = document.getElementById("crud__user-form");
@@ -24,9 +25,11 @@ export const formHandler = () => {
 
             let data = new FormData(form);
             data.append("fingerprint", getFingerprint());
-
+           
+              console.log(data.get("name"))
             let sendPostRequest = async () => {
-
+                
+               
                 let request = await fetch(url, {
                     headers: {
                         'Authorization': 'Bearer ' + localStorage.getItem('token')
@@ -37,11 +40,17 @@ export const formHandler = () => {
                     .then(response => {
                         if (!response.ok) throw response;
 
-
+                       
                         return response.json();
                     })
                     .then(json => {
-                        localStorage.setItem('token', json.data);
+                     
+                        let text = `Usuario ${data.get("name")} ha sido creado con exito.`
+                        console.log(text)
+                        form.dispatchEvent(new CustomEvent('modalbox', { bubbles: true, detail: {msg: text, color: "info"} }))
+                       
+                        form.dispatchEvent(new CustomEvent('modalbox', { bubbles: true, detail: {msg: text, displaytime: 2000, position:"bottom", color: "danger"} }))
+                        form.dispatchEvent(new CustomEvent('modalbox', { bubbles: true, detail: {msg: text, displaytime: 2000, position:"top", color: "warning"} }))
 
                     })
                     .catch(error => {

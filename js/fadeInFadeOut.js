@@ -1,4 +1,3 @@
-const root = document.documentElement;
 const speed= 200
 export const fadeOut = (element) => {
     
