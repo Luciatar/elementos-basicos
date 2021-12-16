@@ -25,27 +25,79 @@ class Table extends HTMLElement {
     }
 
     loadData() {
-
         let url = this.getAttribute('url');
-
-        if(url){
-
-            fetch(url, { 
-                headers: {
-                    'Authorization': 'Bearer ' + localStorage.getItem('token'),
-                }
-            }) 
-            .then(response => {
-                if (!response.ok) throw response;
-
-                return response.json();
+        console.log("getting table...")
+        fetch(url, {
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token")
+            },
+    
+        }).then(response => {
+            // console.log(response);
+            // console.log(response.json);
+            if (!response.ok) throw response;
+    
+            // console.log(response.json);
+            return response.json();
+        }).then(json => {
+            // console.log(json.data);
+            this.data = json.data.data;
+            this.createTable("users_table", json.data.data);
+            console.log(this.data)
+            this.tableAddEditButton("users_table")
+        }).catch(error =>console.log(error));
+    }
+    createTable(containerId, arrObj) {
+        const container = document.getElementById(containerId);
+        const table = document.createElement("table");
+        const tableHead = document.createElement("tr");
+        var keys = Object.keys(arrObj[0]);
+        keys.forEach(key => {
+            let newTh = document.createElement("th");
+            newTh.innerText = key[0].toUpperCase() + key.substring(1)
+            tableHead.appendChild(newTh);
+        });
+        table.appendChild(tableHead);
+        arrObj.forEach((row) => {
+            let newRow = document.createElement("tr")
+            for (const [key, value] of Object.entries(row)) {
+                let newTd = document.createElement("td")
+                newTd.innerText = value
+                // console.log(`${key}: ${value}`);
+                newRow.appendChild(newTd)
+            }
+            table.appendChild(newRow);
+        });
+        container.appendChild(table);
+    }
+    tableAddEditButton(containerId) {
+        const container = document.getElementById(containerId);
+        const table = container.querySelector("table");
+        const rows = table.querySelectorAll("tr");
+    
+        rows.forEach((row, index) => {
+            if (index == 0) {
+                let newTd = document.createElement("td");
+                newTd.classList.add("button-edit")
+                // console.log(`${key}: ${value}`);
+                row.appendChild(newTd)
+                return;
+            }
+            const userId = row.childNodes[0].textContent
+    
+            let newTd = document.createElement("td");
+            newTd.classList.add("button-edit", "button-edit-color")
+            // console.log(`${key}: ${value}`);
+            newTd.addEventListener("click", async function () {
+                getUser(userId) 
+                  
+                    // console.log(response);
+                    // console.log(response.json);
+                setFormFieldsUserData("crud__user-form", )
+                
             })
-            .then(json => {
-                this.data = json.data;
-                this.render();
-            })
-            .catch(error => console.log(error));
-        }
+            row.appendChild(newTd)
+        });
     }
 
     render() {
@@ -53,94 +105,65 @@ class Table extends HTMLElement {
         this.shadow.innerHTML = 
         `
         <style>
-            table {
-                border-collapse: collapse;
-                width: 100%;
-            }
-            td, th {
-                border: 1px solid hsl(0, 0%, 87%);
-                color: hsl(0, 0%, 100%);
-                font-family: 'Ubuntu';
-                padding: 8px;
-                text-align: left;
-            }
-
-            svg {
-                cursor: pointer;
-                height: 1.5em;
-                width: 1.5em;
-            }
-
-            svg path {
-                fill: hsl(0, 0%, 100%);
-            }
-
-            svg:hover path {
-                fill: hsl(19, 100%, 50%);
-            }
+        td, th {
+            padding: 0.7em 0.3em;
+            text-align: center;
+            color: white; }
+          
+          td {
+            word-break: break-all;
+            width: 30%; }
+          
+          th {
+            height: 1em;
+            color: #6edeef; }
+          
+          .table-num {
+            width: 8%; }
+          
+          .button-edit {
+            width: 10%;
+            cursor: pointer; }
+          
+          .button-edit-color:after {
+            background-color: rgba(255, 255, 255, 0.5); }
+          
+          .button-edit:after {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            content: '';
+            -webkit-mask: url(/svg/edit.svg) no-repeat 50% 50%;
+            mask: url(/svg/edit.svg) no-repeat 50% 50%;
+            -webkit-mask-size: cover;
+            mask-size: cover; }
+          
+          .button-edit.button-edit-color:hover:after {
+            background-color: white;
+            position: relative;
+            top: -1px; }
+          
+          table {
+            table-layout: fixed;
+            width: 100%;
+            margin: 30px 0 0 0;
+            background: #545f60;
+            border-radius: 8px;
+            -webkit-box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+            -moz-box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+            box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+            border: none; }
+            table tr:nth-child(even) td {
+              background: #788383; }
+            table > tbody > tr:last-child {
+              border: none; }
+          
         </style>
-        <table>
-            <thead>
-                ${this.getTableHeader()}
-            </thead>
-            <tbody>
-                ${this.getTableData()}
-            </tbody>
-        </table>`;      
+        <div id="users_table">hola</div> `;      
         
-        let editButtons = this.shadow.querySelectorAll(".edit-button");
-
-        editButtons.forEach(editButton => {
-
-            editButton.addEventListener("click", (event) => {
-
-                document.dispatchEvent(new CustomEvent('showElement', {
-                    detail: {
-                        url: this.getAttribute('url') + '/' + editButton.dataset.id,
-                    }
-                }));
-            });
-
-        });
     }
 
-    getTableHeader() {
-
-        let header = '';
-
-        Object.keys(this.data[0]).forEach( (key) => {
-            header += `<th>${key}</th>`;
-        });
-
-        header += `<th></th>`;
-
-        return `<tr>${header}</tr>`;
-    }
-
-    getTableData() {
-
-        let data = '';
-
-        this.data.forEach(element => {
-
-            data += `<tr>`;
-
-            Object.values(element).forEach( (value) => {
-                data += `<td>${value}</td>`;
-            });
-
-            data += 
-            `<td class="edit-button" data-id="${element.id}">
-                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                    <path fill="currentColor" d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" />
-                </svg>
-            </td>`;
-            
-            data += `</tr>`;
-        });
-
-        return data;
-    }           
+    
 }
 
 customElements.define('table-component', Table);

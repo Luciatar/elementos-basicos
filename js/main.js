@@ -4,7 +4,6 @@ import { tabHandler } from "./tabHandler.js";
 import { formHandler } from "./formHandler.js";
 import { ckeditorIni } from "./ckEditor.js"
 import { selectNestedInputHandlder } from "./selectNestedInput.js"
-import { getTable } from "./table.js"
 import "./tableComponent.js"
 import "./modalBoxComponent.js"
 
@@ -14,7 +13,7 @@ window.onload = function () {
     formHandler();
     ckeditorIni();
     selectNestedInputHandlder();
-    getTable()
+ 
     // setInterval(() => {
         // modalBox("Parametros opcionales")
         // modalBox("hi this is a test", 2000, "center")
@@ -30,3 +29,4 @@ window.onload = function () {
    
 };
 
+ 

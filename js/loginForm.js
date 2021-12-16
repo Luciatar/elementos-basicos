@@ -1,7 +1,7 @@
 import { getFingerprint } from './clientId.js';
 import "./modalBoxComponent.js"
 export let renderForm = () => {
-
+    
     let loginForm = document.getElementById("login-form");
     let loginButton = document.getElementById("login-button");
 
