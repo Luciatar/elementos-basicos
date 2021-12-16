@@ -1,13 +1,11 @@
 import { getFingerprint } from './clientId.js';
-import { modalBox } from './modalBox.js';
-
+import "./modalBoxComponent.js"
 export let renderForm = () => {
 
     let loginForm = document.getElementById("login-form");
     let loginButton = document.getElementById("login-button");
 
     if (loginButton) {
-        console.log("hiit");
         loginButton.addEventListener("click", (event) => {
             // const formData = new FormData(loginForm);
             // for (var pair of formData.entries()) {
@@ -20,10 +18,7 @@ export let renderForm = () => {
             data.append("fingerprint", getFingerprint());
 
             let sendPostRequest = async () => {
-
                 let request = await fetch(url, {
-
-
                     method: 'POST',
                     body: data
                 })
@@ -36,18 +31,12 @@ export let renderForm = () => {
                     .then(json => {
                         localStorage.setItem('token', json.data);
                         let text= data.get("email") + " logged in";
-                        console.log(text)
-                        console.log(json.data)
-                        console.log("loginForm"+loginForm)
                         document.dispatchEvent(new CustomEvent('modalbox', { bubbles: true, detail: {msg: text, displaytime: 5000, position: "bottom-right", color: "success"} } ))
                         
                     })
                     .catch(error => {
-
                         if (error.status == '400') {
-
                             error.json().then(jsonError => {
-
                                 let errors = jsonError.data;
                                 console.log(errors)
                                 // Object.keys(errors).forEach((key) => {

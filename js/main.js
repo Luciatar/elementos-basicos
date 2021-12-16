@@ -5,8 +5,8 @@ import { formHandler } from "./formHandler.js";
 import { ckeditorIni } from "./ckEditor.js"
 import { selectNestedInputHandlder } from "./selectNestedInput.js"
 import { getTable } from "./table.js"
-import { modalBox } from "./modalBox.js"
 import "./tableComponent.js"
+import "./modalBoxComponent.js"
 
 window.onload = function () {
     logoHandler();
