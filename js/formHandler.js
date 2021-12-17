@@ -25,11 +25,11 @@ export const formHandler = () => {
 
             let data = new FormData(form);
             data.append("fingerprint", getFingerprint());
-           
-              console.log(data.get("name"))
+
+            console.log(data.get("name"))
             let sendPostRequest = async () => {
-                
-               
+
+
                 let request = await fetch(url, {
                     headers: {
                         'Authorization': 'Bearer ' + localStorage.getItem('token')
@@ -40,17 +40,14 @@ export const formHandler = () => {
                     .then(response => {
                         if (!response.ok) throw response;
 
-                       
+
                         return response.json();
                     })
                     .then(json => {
-                     
+
                         let text = `Usuario ${data.get("name")} ha sido creado con exito.`
                         console.log(text)
-                        form.dispatchEvent(new CustomEvent('modalbox', { bubbles: true, detail: {msg: text, color: "info"} }))
-                       
-                        form.dispatchEvent(new CustomEvent('modalbox', { bubbles: true, detail: {msg: text, displaytime: 2000, position:"bottom", color: "danger"} }))
-                        form.dispatchEvent(new CustomEvent('modalbox', { bubbles: true, detail: {msg: text, displaytime: 2000, position:"top", color: "warning"} }))
+                        document.dispatchEvent(new CustomEvent('modalbox', { bubbles: true, detail: { msg: text, color: "info" } }))
 
                     })
                     .catch(error => {
@@ -58,11 +55,11 @@ export const formHandler = () => {
                         if (error.status == '400') {
 
                             error.json().then(jsonError => {
-                               
+
                                 let errors = jsonError.data;
 
                                 Object.keys(errors).forEach((key) => {
-                                    
+
                                     document.querySelector(`[name=${key}]`).classList.add("invalid-input")
                                     document.querySelector(`[name=${key}]`).placeholder = errors[key][0];
                                 })

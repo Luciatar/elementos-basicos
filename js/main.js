@@ -6,6 +6,7 @@ import { ckeditorIni } from "./ckEditor.js"
 import { selectNestedInputHandlder } from "./selectNestedInput.js"
 import "./tableComponent.js"
 import "./modalBoxComponent.js"
+import "./searchBarComponent.js"
 
 window.onload = function () {
     logoHandler();

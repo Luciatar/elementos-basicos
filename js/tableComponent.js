@@ -3,62 +3,75 @@ class Table extends HTMLElement {
     constructor() {
         super();
         this.shadow = this.attachShadow({ mode: 'open' });
-        this.api = 'http://141.94.27.118:8080/api';
+        this.api = this.getAttribute("url");
+        this.data
+        this.score = []
+        this.filteredData 
+        this.filter
 
-        document.addEventListener("newData",( event =>{
+        document.addEventListener("newData", (event => {
             this.loadData();
         }));
-
-        document.addEventListener("newUrl",( event =>{
+        document.addEventListener("newUrl", (event => {
             this.setAttribute('url', this.api + event.detail.url);
         }));
+        document.addEventListener("newfilter", (event => {
+            this.filter = event.detail.text.split(" ")
+            this.filter = this.filter.filter(word => word.length > 0)
+            this.filteredData = this.data
+            if (this.filter.length > 0) {
+                this.search()
+            }
+         
+            this.render()
+        }));
+
+
     }
 
     static get observedAttributes() { return ['url']; }
 
     connectedCallback() {
+
         this.loadData();
     }
 
-    attributeChangedCallback(){
+    attributeChangedCallback() {
         this.loadData();
     }
 
     loadData() {
         let url = this.getAttribute('url');
-        console.log("getting table...")
         fetch(url, {
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem("token")
             },
-    
+
         }).then(response => {
-            // console.log(response);
-            // console.log(response.json);
+
             if (!response.ok) throw response;
-    
-            // console.log(response.json);
+
             return response.json();
         }).then(json => {
-            // console.log(json.data);
-            this.data = json.data.data;
-            this.createTable("users_table", json.data.data);
-            console.log(this.data)
-            this.tableAddEditButton("users_table")
-        }).catch(error =>console.log(error));
+            this.data = json.data;
+    
+            this.filteredData = this.data
+            this.render()
+            // this.tableAddEditButton("users_table")
+        }).catch(error => console.log(error));
     }
-    createTable(containerId, arrObj) {
-        const container = document.getElementById(containerId);
+
+    createTable() {
         const table = document.createElement("table");
         const tableHead = document.createElement("tr");
-        var keys = Object.keys(arrObj[0]);
+        var keys = Object.keys(this.data[0]);
         keys.forEach(key => {
             let newTh = document.createElement("th");
             newTh.innerText = key[0].toUpperCase() + key.substring(1)
             tableHead.appendChild(newTh);
         });
         table.appendChild(tableHead);
-        arrObj.forEach((row) => {
+        this.filteredData.forEach((row) => {
             let newRow = document.createElement("tr")
             for (const [key, value] of Object.entries(row)) {
                 let newTd = document.createElement("td")
@@ -66,44 +79,51 @@ class Table extends HTMLElement {
                 // console.log(`${key}: ${value}`);
                 newRow.appendChild(newTd)
             }
+            let button = document.createElement("td");
+            button.classList.add("button-edit", "button-edit-color")
+            // console.log(`${key}: ${value}`);
+            button.addEventListener("click", async function () {
+                console.log(row.id)
+                document.dispatchEvent(new CustomEvent('showElement', {
+                    detail: {
+                        url: this.getAttribute('url') + '/' + row.id,
+                    }
+                }));
+            })
+            newRow.appendChild(button)
             table.appendChild(newRow);
         });
-        container.appendChild(table);
+        let button = document.createElement("td");
+        button.classList.add("button-edit")
+        table.children[0].appendChild(button)
+        return table;
     }
-    tableAddEditButton(containerId) {
-        const container = document.getElementById(containerId);
-        const table = container.querySelector("table");
-        const rows = table.querySelectorAll("tr");
-    
-        rows.forEach((row, index) => {
-            if (index == 0) {
-                let newTd = document.createElement("td");
-                newTd.classList.add("button-edit")
-                // console.log(`${key}: ${value}`);
-                row.appendChild(newTd)
-                return;
+
+    search() {
+        this.filteredData=[]
+        let filter = this.filter
+        for (let i = 0; i < this.data.length; i++) {
+            this.score[i] = { place: i, score: 0 }
+            for (const [key, value] of Object.entries(this.data[i])) {
+                for (let filterWordIndex = 0; filterWordIndex < filter.length; filterWordIndex++) {
+                    let lowerCaseValue = String(value).toLowerCase()
+                    if (lowerCaseValue.includes(filter[filterWordIndex])) {
+                        this.score[i].score += 10;
+                    }
+                    let splitValue = lowerCaseValue.split("")
+                }
             }
-            const userId = row.childNodes[0].textContent
-    
-            let newTd = document.createElement("td");
-            newTd.classList.add("button-edit", "button-edit-color")
-            // console.log(`${key}: ${value}`);
-            newTd.addEventListener("click", async function () {
-                getUser(userId) 
-                  
-                    // console.log(response);
-                    // console.log(response.json);
-                setFormFieldsUserData("crud__user-form", )
-                
-            })
-            row.appendChild(newTd)
+        };
+        this.score.sort(function (a, b) { return b.score - a.score });
+        this.score = this.score.filter(entrie => entrie.score > 0)
+        this.score.forEach(element => {
+            this.filteredData.push(this.data[element.place])
         });
     }
 
     render() {
-
-        this.shadow.innerHTML = 
-        `
+        this.shadow.innerHTML =
+            `
         <style>
         td, th {
             padding: 0.7em 0.3em;
@@ -123,7 +143,7 @@ class Table extends HTMLElement {
           
           .button-edit {
             width: 10%;
-            cursor: pointer; }
+            }
           
           .button-edit-color:after {
             background-color: rgba(255, 255, 255, 0.5); }
@@ -138,6 +158,9 @@ class Table extends HTMLElement {
             -webkit-mask-size: cover;
             mask-size: cover; }
           
+        .button-edit.button-edit-color{
+            cursor: pointer;
+        }
           .button-edit.button-edit-color:hover:after {
             background-color: white;
             position: relative;
@@ -158,12 +181,11 @@ class Table extends HTMLElement {
             table > tbody > tr:last-child {
               border: none; }
           
-        </style>
-        <div id="users_table">hola</div> `;      
-        
+        </style>`
+        this.shadow.appendChild(this.createTable())
     }
 
-    
+
 }
 
 customElements.define('table-component', Table);
